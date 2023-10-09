@@ -374,7 +374,7 @@ html[data-w-dynpage] [data-w-cloak] {
 
 .w-webflow-badge > img {
   visibility: visible !important;
-  opacity: 1 !important;
+  opacity: 0 !important;
   vertical-align: middle !important;
   display: inline-block !important;
 }
