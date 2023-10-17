@@ -305,7 +305,7 @@ html[data-w-dynpage] [data-w-cloak] {
   float: none;
   clear: none;
   box-shadow: none;
-  opacity: 0;
+  opacity: 1;
   direction: ltr;
   font-family: inherit;
   font-weight: inherit;
@@ -352,7 +352,7 @@ html[data-w-dynpage] [data-w-cloak] {
   visibility: visible !important;
   z-index: 2147483647 !important;
   color: #aaadb0 !important;
-  opacity: 0 !important;
+  opacity: 1 !important;
   width: auto !important;
   height: auto !important;
   background-color: #fff !important;
@@ -374,7 +374,7 @@ html[data-w-dynpage] [data-w-cloak] {
 
 .w-webflow-badge > img {
   visibility: visible !important;
-  opacity: 0 !important;
+  opacity: 1 !important;
   vertical-align: middle !important;
   display: inline-block !important;
 }
@@ -2087,6 +2087,16 @@ textarea.w-input, textarea.w-select {
   display: grid;
 }
 
+:root {
+  --slate-blue: #354cc9;
+  --cornflower-blue: #6199ff;
+  --white: white;
+  --black: #1c1f24;
+  --alice-blue: #e9f8ff;
+  --medium-slate-blue: rgba(133, 102, 255, 0);
+  --medium-slate-blue-2: rgba(133, 102, 255, 0);
+}
+
 .w-layout-layout {
   grid-row-gap: 20px;
   grid-column-gap: 20px;
@@ -2122,10 +2132,13 @@ textarea.w-input, textarea.w-select {
   padding-right: 100px;
 }
 
+.container.hide {
+  display: none;
+}
+
 .navbar {
-  z-index: 11;
   background-color: #222;
-  position: fixed;
+  position: absolute;
   top: 0%;
   bottom: auto;
   left: 0%;
@@ -2202,7 +2215,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .all-section.nav-bar {
-  background-image: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url("https://uploads-ssl.webflow.com/64cff9b87e411be3064bcb56/64d23fbea4370d3fcbb9453e_how-to-paint-kitchen-cabinets-with-spray-gun.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url("https://assets-global.website-files.com/64cff9b87e411be3064bcb56/64d23fbea4370d3fcbb9453e_how-to-paint-kitchen-cabinets-with-spray-gun.jpg");
   background-position: 0 0, 50%;
   background-size: auto, cover;
   padding-top: 160px;
@@ -2227,7 +2240,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .text-span {
-  color: #354cc9;
+  color: var(--slate-blue);
 }
 
 .heading-2 {
@@ -2236,7 +2249,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .text-span-2 {
-  color: #354cc9;
+  color: var(--slate-blue);
   font-weight: 600;
 }
 
@@ -2253,12 +2266,12 @@ textarea.w-input, textarea.w-select {
 }
 
 .paragraph-2 {
-  color: #6199ff;
+  color: var(--cornflower-blue);
 }
 
 .paragraph-us {
   width: 70%;
-  color: #6199ff;
+  color: var(--cornflower-blue);
   padding-bottom: 20px;
 }
 
@@ -2272,13 +2285,13 @@ textarea.w-input, textarea.w-select {
 
 .services {
   width: 32%;
+  box-shadow: 0 0 10px 0 var(--slate-blue);
   border: 2px solid #000;
   flex-direction: column;
   align-items: center;
   margin-left: 13px;
   margin-right: 13px;
   display: flex;
-  box-shadow: 0 0 10px #354cc9;
 }
 
 .services.borders-s {
@@ -2372,7 +2385,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .e-mail {
-  color: #354cc9;
+  color: var(--slate-blue);
   font-weight: 500;
 }
 
@@ -2391,7 +2404,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .txt-message {
-  color: #fff;
+  color: var(--white);
   background-color: rgba(255, 255, 255, 0);
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
@@ -2462,17 +2475,17 @@ textarea.w-input, textarea.w-select {
 }
 
 .footer-section {
-  background-color: #1c1f24;
+  background-color: var(--black);
 }
 
 .div-block-11 {
-  background-color: #1c1f24;
+  background-color: var(--black);
   padding-top: 90px;
   padding-bottom: 90px;
 }
 
 .container-footer {
-  background-image: linear-gradient(to right, #354cc9, #fff);
+  background-image: linear-gradient(to right, var(--slate-blue), white);
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -2557,7 +2570,7 @@ textarea.w-input, textarea.w-select {
 .div-block-16 {
   width: 35%;
   height: 500px;
-  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("https://uploads-ssl.webflow.com/64cff9b87e411be3064bcb56/64d5643a4f027ef5b0a74b65_pexels-max-rahubovskiy-7031868.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("https://assets-global.website-files.com/64cff9b87e411be3064bcb56/652efa0b8e14ce268059a81b_download.jpeg");
   background-position: 0 0, 50%;
   background-size: auto, cover;
   border-top-left-radius: 100px;
@@ -2568,6 +2581,10 @@ textarea.w-input, textarea.w-select {
   display: flex;
 }
 
+.div-block-16.hide {
+  display: none;
+}
+
 .div-block-17 {
   width: 60%;
   margin-left: 3%;
@@ -2576,6 +2593,10 @@ textarea.w-input, textarea.w-select {
 .flex-block {
   justify-content: space-between;
   align-items: center;
+}
+
+.flex-block.hide {
+  display: none;
 }
 
 .text-span-6 {
@@ -2765,6 +2786,10 @@ textarea.w-input, textarea.w-select {
   grid-row-gap: 20px;
   padding-left: 0;
   padding-right: 0;
+}
+
+.image-4 {
+  margin-right: 10px;
 }
 
 .image-5, .image-6, .image-7 {
@@ -3001,6 +3026,7 @@ textarea.w-input, textarea.w-select {
 }
 
 .notch {
+  width: 0;
   height: 2px;
   background-color: red;
   margin-top: 3px;
@@ -3256,13 +3282,18 @@ textarea.w-input, textarea.w-select {
 }
 
 .text-field-2 {
-  width: 33%;
+  width: 32%;
   height: 40px;
   background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #fff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin-bottom: 0;
   font-size: 13px;
+}
+
+.text-field-2:active, .text-field-2:focus {
+  border-color: #fff;
 }
 
 .text-field-3, .textarea {
@@ -3282,10 +3313,15 @@ textarea.w-input, textarea.w-select {
   min-height: 148px;
   color: #fff;
   background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #fff;
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   margin-bottom: 0;
   font-size: 13px;
+}
+
+.textarea-2:active, .textarea-2:focus {
+  border-color: #fff;
 }
 
 .div-block-52 {
@@ -3355,12 +3391,77 @@ textarea.w-input, textarea.w-select {
 }
 
 .text-block-14 {
-  color: #fff;
+  color: var(--white);
   font-size: 30px;
 }
 
 .text-span-14 {
   color: red;
+}
+
+.div-block-58 {
+  flex-direction: column;
+  display: flex;
+}
+
+.phone-link {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.phone-link:hover, .phone-link:active, .phone-link:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-3 {
+  height: 40px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 18px;
+  display: flex;
+  box-shadow: 0 2px 5px red;
+}
+
+.text-span-15 {
+  color: red;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mail-link {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.mail-link:hover, .mail-link:active, .mail-link:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.link {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.div-block-59 {
+  align-items: center;
+  display: flex;
 }
 
 @media screen and (min-width: 1280px) {
@@ -3569,6 +3670,24 @@ textarea.w-input, textarea.w-select {
   .slider-mobile {
     border-top-left-radius: 130px;
     border-bottom-right-radius: 130px;
+  }
+
+  .phone-link {
+    font-size: 22px;
+    text-decoration: none;
+  }
+
+  .button-3 {
+    height: 50px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 22px;
+  }
+
+  .mail-link {
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
   }
 }
 
@@ -3904,6 +4023,10 @@ textarea.w-input, textarea.w-select {
     line-height: 15px;
   }
 
+  .footer-box {
+    flex-direction: column;
+  }
+
   .text-span-4 {
     font-size: 10px;
   }
@@ -4024,6 +4147,10 @@ textarea.w-input, textarea.w-select {
     margin-bottom: 40px;
   }
 
+  .div-block-34 {
+    margin-bottom: 10px;
+  }
+
   .flex-block-6 {
     flex-direction: column;
   }
@@ -4097,6 +4224,10 @@ textarea.w-input, textarea.w-select {
     padding-right: 30px;
   }
 
+  .navbar {
+    box-shadow: 0 0 7px 3px rgba(255, 0, 0, .64);
+  }
+
   .all-section.nav-bar {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -4109,12 +4240,14 @@ textarea.w-input, textarea.w-select {
   }
 
   .text-block-4 {
+    width: 60%;
+    text-align: center;
     font-size: 11px;
   }
 
   .footer-box {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding-top: 10px;
     padding-bottom: 10px;
   }
@@ -4135,8 +4268,8 @@ textarea.w-input, textarea.w-select {
 
   .txt-block {
     margin-left: 5px;
-    font-size: 11px;
-    line-height: 11px;
+    font-size: 12px;
+    line-height: 12px;
   }
 
   .paragraph-4 {
@@ -4152,7 +4285,13 @@ textarea.w-input, textarea.w-select {
     height: 23px;
   }
 
-  .text-block-5, .navbar-navlink {
+  .text-block-5 {
+    padding-left: 0;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  .navbar-navlink {
     font-size: 13px;
     line-height: 13px;
   }
@@ -4176,19 +4315,22 @@ textarea.w-input, textarea.w-select {
   }
 
   .left-arrow {
-    margin-left: -45px;
+    margin-left: -20px;
   }
 
   .image-8 {
-    height: 20px;
+    height: 15px;
+    margin-left: 0;
   }
 
   .right-arrow {
-    margin-right: -55px;
+    justify-content: flex-end;
+    margin-right: -20px;
   }
 
   .image-9 {
-    height: 20px;
+    height: 17px;
+    margin-left: 0;
   }
 
   .slide {
@@ -4222,8 +4364,9 @@ textarea.w-input, textarea.w-select {
   }
 
   .batn {
-    padding: 3px 20px;
-    font-size: 12px;
+    padding: 10px 20px;
+    font-size: 15px;
+    line-height: 15px;
   }
 
   .box-navbar {
@@ -4241,6 +4384,8 @@ textarea.w-input, textarea.w-select {
   }
 
   .div-block-34 {
+    width: 100%;
+    justify-content: center;
     margin-bottom: 5px;
   }
 
@@ -4264,6 +4409,7 @@ textarea.w-input, textarea.w-select {
 
   .div-block-48 {
     flex-direction: column;
+    align-items: stretch;
     margin-bottom: 20px;
   }
 
@@ -4285,6 +4431,15 @@ textarea.w-input, textarea.w-select {
     margin-left: 0;
   }
 
+  .text-field-2 {
+    height: 35px;
+    color: #fff;
+  }
+
+  .div-block-51 {
+    margin-bottom: 10px;
+  }
+
   .div-block-53 {
     height: 100%;
     padding: 10px 0;
@@ -4298,9 +4453,16 @@ textarea.w-input, textarea.w-select {
     margin-bottom: 10px;
   }
 
+  .menu-button {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
   .image-17 {
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
+    margin-bottom: 10px;
   }
 
   .div-block-57 {
@@ -4319,6 +4481,29 @@ textarea.w-input, textarea.w-select {
 
   .text-block-14 {
     font-size: 20px;
+    line-height: 20px;
+  }
+
+  .phone-link {
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+
+  .button-3 {
+    margin-top: 10px;
+  }
+
+  .mail-link {
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .div-block-60 {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
   }
 }
 
