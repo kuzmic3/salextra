@@ -66,17 +66,17 @@
                 garantujemo da će vaši frontovi izgledati potpuno glatko i bez ikakvih tragova prašine.</p>
                 <div class="div-block-55">
                     <div class="services-farbanje"><img
-                            src="64cff9b87e411be3064bcb56/64d92e959cf7e184e8fe3d66_check%20(1).png" loading="lazy"
+                            src="64cff9b87e411be3064bcb56/check.png" loading="lazy"
                             alt="" class="image-4">
                         <div class="text-block-5">Farbanje medijapana</div>
                     </div>
                     <div class="services-farbanje"><img
-                            src="64cff9b87e411be3064bcb56/64d92e959cf7e184e8fe3d66_check%20(1).png" loading="lazy"
+                            src="64cff9b87e411be3064bcb56/check.png" loading="lazy"
                             alt="" class="image-4">
                         <div class="text-block-5">Farbanje iverice</div>
                     </div>
                     <div class="services-farbanje"><img
-                            src="64cff9b87e411be3064bcb56/64d92e959cf7e184e8fe3d66_check%20(1).png" loading="lazy"
+                            src="64cff9b87e411be3064bcb56/check.png" loading="lazy"
                             alt="" class="image-4">
                         <div class="text-block-5">Farbanje masiva</div>
                     </div>
@@ -297,7 +297,7 @@
             <div class="div-block-17">
                 <div class="text-block-3"><span class="text-span-12">K</span>ontakt</div>
                 <div class="w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form-2"
+                    <form id="email-form" name="email-form" data-name="Email Form" method="post" class="form-2"
                           data-wf-page-id="64cff9b87e411be3064bcb59"
                           data-wf-element-id="5a7d75d1-8997-5265-d313-afab920c1ecb">
                         <div class="div-block-51"><input type="text" class="text-field-2 w-input" maxlength="256"
@@ -316,8 +316,8 @@
                         <div class="div-block-52"><textarea placeholder="* Ostavite poruku..." maxlength="5000"
                                                             id="message" name="field" data-name="Field"
                                                             class="textarea-2 w-input"></textarea></div>
-                        <input type="submit" value="Pošalji" data-wait="Please wait..." class="form-btn w-button">
-                        <p id="email-form-response"></p>
+                        <input type="submit" value="Pošalji" data-wait="Sacekajte..." class="form-btn w-button">
+                        <p id="email-form-response" style="margin-top: 10px; color: red; font-size: 20px"></p>
                     </form>
                     <div class="w-form-done">
                         <div>Thank you! Your submission has been received!</div>
@@ -336,10 +336,10 @@
         <div class="footer-box">
             <div class="div-block-34"><a href="https://www.facebook.com/salextra" target="_blank"
                                          class="w-inline-block"><img
-                    src="64cff9b87e411be3064bcb56/64d517a32394b8640c0ebad8_facebook%20(2).png" loading="lazy" alt=""
+                    src="64cff9b87e411be3064bcb56/facebook.png" loading="lazy" alt=""
                     class="image-footer"></a><a href="https://www.instagram.com/farbanje_medijapana_salextra/"
                                                 target="_blank" class="w-inline-block"><img
-                    src="64cff9b87e411be3064bcb56/64d51e698b5b8b51a3765f98_instagram%20(1).png" loading="lazy" alt=""
+                    src="64cff9b87e411be3064bcb56/instagram.png" loading="lazy" alt=""
                     class="image-footer"></a></div>
             <div class="text-block-4"><span class="text-span-4">STEFIX Tehnology</span> © Salextra 2023 All right
                 reserved
@@ -371,23 +371,27 @@
             let phone = document.getElementById('phone')
             let message = document.getElementById('message')
 
-            $.ajax(formAction, {
-                data: {name: name.value, email: email.value, phone: phone.value, message: message.value },
-                method: 'post',
-                url: 'https://formspree.io/f/xnqklawn',
-                headers: {'Accept': 'application/json'}
-            })
-                .done((res) => {
-                    contactFormResponse.innerText = 'Your message has been successfully submitted.'
+            if (name === '' || email === '' || phone === '' || message === '') {
+                contactFormResponse.innerText = 'Molimo vas, popunite sva polja.'
+            } else {
+                $.ajax(formAction, {
+                    data: {name: name.value, email: email.value, phone: phone.value, message: message.value},
+                    method: 'post',
+                    url: 'https://formspree.io/f/xnqklawn',
+                    headers: {'Accept': 'application/json'}
+                })
+                    .done((res) => {
+                        contactFormResponse.innerText = 'Vaša poruka je uspešno poslata.'
 
-                    name.value = ''
-                    email.value = ''
-                    phone.value = ''
-                    message.value = ''
-                })
-                .fail((res) => {
-                    contactFormResponse.innerText = 'Error. Please, try again.'
-                })
+                        name.value = ''
+                        email.value = ''
+                        phone.value = ''
+                        message.value = ''
+                    })
+                    .fail((res) => {
+                        contactFormResponse.innerText = 'Greška! Molimo vas, pokušajte ponovo.'
+                    })
+            }
         });
     });
 
