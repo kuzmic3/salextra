@@ -375,7 +375,7 @@
             let phone = document.getElementById('phone')
             let message = document.getElementById('message')
 
-            if (name === '' || email === '' || phone === '' || message === '') {
+            if (name.value === '' || email.value === '' || phone.value === '' || message.value === '') {
                 contactFormResponse.innerText = 'Molimo vas, popunite sva polja.'
             } else {
                 $.ajax(formAction, {
