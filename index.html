@@ -81,7 +81,7 @@
                         <div class="text-block-5">Farbanje masiva</div>
                     </div>
                     <div class="services-farbanje"><img
-                            src="64cff9b87e411be3064bcb56/64d92e959cf7e184e8fe3d66_check%20(1).png" loading="lazy"
+                            src="64cff9b87e411be3064bcb56/check.png" loading="lazy"
                             alt="" class="image-4">
                         <div class="text-block-5">Farbanje vratiju</div>
                     </div>
@@ -297,7 +297,7 @@
             <div class="div-block-17">
                 <div class="text-block-3"><span class="text-span-12">K</span>ontakt</div>
                 <div class="w-form">
-                    <form id="email-form" name="email-form" data-name="Email Form" method="post" class="form-2"
+                    <form id="email-form" name="email-form" data-name="Email Form" method="POST" class="form-2"
                           data-wf-page-id="64cff9b87e411be3064bcb59"
                           data-wf-element-id="5a7d75d1-8997-5265-d313-afab920c1ecb">
                         <div class="div-block-51"><input type="text" class="text-field-2 w-input" maxlength="256"
@@ -355,8 +355,7 @@
     Webflow.push(function () {
         $(document).off('submit');
 
-        $('#contact-form').submit(function(e) {
-            console.log('a');
+        $('#email-form').submit(function(e) {
             e.preventDefault();
 
             const contactForm = document.getElementById('email-form')
