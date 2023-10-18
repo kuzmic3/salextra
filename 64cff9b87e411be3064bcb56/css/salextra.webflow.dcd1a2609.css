@@ -4105,19 +4105,23 @@ textarea.w-input, textarea.w-select {
   }
 
   .left-arrow {
-    margin-left: -60px;
+    margin-left: -40px;
+    width: 40px;
   }
 
   .image-8 {
     height: 25px;
+    margin-left: 7.5px;
   }
 
   .right-arrow {
-    margin-right: -60px;
+    margin-right: -40px;
+    width: 40px;
   }
 
   .image-9 {
     height: 25px;
+    margin-left: 7.5px;
   }
 
   .image-10, .image-11, .image-12 {
@@ -4317,22 +4321,21 @@ textarea.w-input, textarea.w-select {
   }
 
   .left-arrow {
-    margin-left: -20px;
+    margin-left: -30px;
+    width: 30px;
   }
 
   .image-8 {
     height: 15px;
-    margin-left: 0;
   }
 
   .right-arrow {
-    justify-content: flex-end;
-    margin-right: -20px;
+    margin-right: -30px;
+    width: 30px;
   }
 
   .image-9 {
-    height: 17px;
-    margin-left: 0;
+    height: 15px;
   }
 
   .slide {
